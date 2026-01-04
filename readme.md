@@ -1,34 +1,59 @@
-<!-- markdownlint-disable MD029 -->
-# @totominc/command-parser
+<<!-- markdownlint-disable MD029 -->
+# @bbizic/command-parser
 
-[![CircleCI](https://circleci.com/gh/TotomInc/command-parser/tree/master.svg?style=shield)](https://circleci.com/gh/TotomInc/command-parser/tree/master)
-[![codecov](https://codecov.io/gh/TotomInc/command-parser/branch/master/graph/badge.svg)](https://codecov.io/gh/TotomInc/command-parser)
+> ⚠️ **Maintained fork notice**
+>
+> This package is a **maintained fork** of
+> [`@totominc/command-parser`](https://github.com/TotomInc/command-parser),
+> originally created by **Thomas Cazade (TotomInc)**.
+>
+> The original package has been **removed from the public npm registry**.
+> This fork exists to keep the package available for existing and future users.
+>
+> **No original authorship is claimed.**  
+> All credit for the original work goes to the original author.
+
+---
+
+[![Original CircleCI](https://circleci.com/gh/TotomInc/command-parser/tree/master.svg?style=shield)](https://circleci.com/gh/TotomInc/command-parser/tree/master)
+[![Original codecov](https://codecov.io/gh/TotomInc/command-parser/branch/master/graph/badge.svg)](https://codecov.io/gh/TotomInc/command-parser)
 
 > A modulable UNIX terminal command-parser, originally created for skid-inc incremental-game.
 
-⚠️ this is an experimental library, getting new features and bug-fixes as I encounter them on skid-inc.
+⚠️ This is an experimental library, getting new features and bug-fixes as encountered in real-world usage.
+
+---
+
+## Credits
+
+- **Original author:** Thomas Cazade  
+- **Original repository:** https://github.com/TotomInc/command-parser  
+- **Fork repository:** https://github.com/bbizic/command-parser  
+- **License:** MIT (unchanged)
+
+---
 
 ## Usage
 
-1. install using `npm` or `yarn`
+### 1. Install using `npm` or `yarn`
 
 ```bash
-npm i @totominc/command-parser --save
+npm i @bbizic/command-parser --save
 # or with Yarn
-yarn add @totominc/command-parser
-```
+yarn add @bbizic/command-parser
+
 
 2. import in your code, see [the API](#API) for exported functions
 
 ### Basic usage using the `parser` function
 
 ```typescript
-// make sure to take a look at `public/index.ts` for more examples.
+/// make sure to take a look at `public/index.ts` for more examples.
 
 // the parser function is the default export of the module.
-import parse, { Command } from '@totominc/command-parser';
+import parse, { Command } from '@bbizic/command-parser';
 
-// your array of commands which is needed everytime you want to parse or
+// your array of commands which is needed every time you want to parse or
 // autocomplete a user-input.
 const commands: Command[] = [{
   name: 'ssh',
@@ -56,12 +81,13 @@ const { command, parsedArgs, valid } = parse<Command>(
 );
 
 console.log(command, parsedArgs, valid);
+
 ```
 
 ### Dynamically autocomplete a user input
 
 ```typescript
-import { autocomplete, Command } from '@totominc/command-parser';
+import { autocomplete, Command } from '@bbizic/command-parser';
 
 const commands: Command[] = [{
   name: 'ssh',
@@ -85,8 +111,9 @@ const commands: Command[] = [{
 // commands.
 const suggestions = autocomplete('ssh -l ad', commands);
 
-// `['admin', 'admin-bis']`
+// ['admin', 'admin-bis']
 console.log(suggestions);
+
 ```
 
 ## API
@@ -99,7 +126,7 @@ Parse user-input, find the command and extract arguments. Test the validity
 of arguments and of the command value. Return the command found, parsed
 arguments and validity of the input.
 
-> This is the default export of the module, the parser function can be imported by doing this `import awesomeParser from '@totominc/command-parser';`.
+> This is the default export of the module, the parser function can be imported by doing this `import awesomeParser from '@bbizic/command-parser';`.
 
 **Kind**: global function  
 
@@ -237,4 +264,4 @@ Contributions are welcome, make sure to add/edit tests when you are contributing
 
 ## License
 
-See the [MIT License](https://github.com/totominc/command-parser/blob/master/LICENSE) file.
+See the [MIT License](https://github.com/bbizic/command-parser/blob/master/LICENSE) file.

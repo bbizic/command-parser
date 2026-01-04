@@ -1,7 +1,7 @@
 {
-  "name": "@totominc/command-parser",
+  "name": "@bbizic/command-parser",
   "description": "A modulable terminal command-parser, originally created for skid-inc incremental-game.",
-  "version": "0.4.0",
+  "version": "0.4.1",
   "license": "MIT",
   "author": {
     "name": "Thomas Cazade",
@@ -12,7 +12,14 @@
   "types": "dist/index.d.ts",
   "repository": {
     "type": "git",
-    "url": "https://github.com/totominc/command-parser"
+    "url": "git+https://github.com/bbizic/command-parser.git"
+  },
+  "homepage": "https://github.com/bbizic/command-parser#readme",
+  "bugs": {
+    "url": "https://github.com/bbizic/command-parser/issues"
+  },
+  "publishConfig": {
+    "access": "public"
   },
   "scripts": {
     "build": "tsc -p tsconfig.json",
@@ -36,37 +43,24 @@
   },
   "ava": {
     "compileEnhancements": false,
-    "extensions": [
-      "ts"
-    ],
-    "require": [
-      "ts-node/register/transpile-only"
-    ],
+    "extensions": ["ts"],
+    "require": ["ts-node/register/transpile-only"],
     "files": [
       "test/**/*.ts",
       "!test/utils/**/*"
     ]
   },
   "nyc": {
-    "include": [
-      "src/**/*.ts"
-    ],
+    "include": ["src/**/*.ts"],
     "exclude": [
       "node_modules/**/*",
       "**/*.d.ts",
       "src/index.ts",
       "src/models/**/*.ts"
     ],
-    "extension": [
-      ".ts"
-    ],
-    "require": [
-      "ts-node/register"
-    ],
-    "reporter": [
-      "html",
-      "text"
-    ],
+    "extension": [".ts"],
+    "require": ["ts-node/register"],
+    "reporter": ["html", "text"],
     "sourceMap": true,
     "instrument": true,
     "all": true
